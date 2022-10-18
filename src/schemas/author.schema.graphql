@@ -1,0 +1,28 @@
+type Author {
+  id: ID
+  firstname: String
+  lastname: String
+  birthday: Date
+  nationality: EnumNationality
+  books: [Book]
+}
+
+enum EnumNationality {
+  FR
+  US
+}
+
+type Query {
+  listAuthors: [Author]
+  getAuthorById(authorId: ID): Author
+}
+input AddOrEditAuthorInput {
+  firstname: String
+  lastname: String
+  nationality: EnumNationality
+  birthday: Date
+}
+type Mutation {
+  addAuthor(addAuthorInput: AddOrEditAuthorInput): Author
+  editAuthor(editAuthorInput: AddOrEditAuthorInput): Author
+}
