@@ -13,6 +13,7 @@ const server = new ApolloServer({
   csrfPrevention: true,
   cache: "bounded",
   plugins: [ApolloServerPluginLandingPageLocalDefault({ embed: true })],
+
 });
 
 // The `listen` method launches a web server.
